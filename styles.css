@@ -1,0 +1,87 @@
+/* Reset básico */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+    display: block;
+}
+
+.contenido {
+    padding: 2rem;
+    background: white;
+    max-width: 800px;
+    margin: 1rem auto;
+    border-radius: 8px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ============ Menú hamburguesa ============ */
+.menu-icon {
+    display: none; /* Ocultamos el ícono por defecto (solo se verá en móvil) */
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Ocultar checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* 📱 Diseño responsivo */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none; /* Oculto por defecto */
+    }
+
+    /* Mostrar menú cuando el checkbox está activado */
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
